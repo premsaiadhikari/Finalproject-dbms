@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from controllers import AuthenticationRouter
+from config import config
+import logging
 
-app = FastAPI()
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-origins = ["http://localhost:5173"]
+app = FastAPI(
+    title=config.Settings.title,
+    description=config.Settings.description,
+    version=config.Settings.version
+)
+
+origins = config.CORS_ORIGINS
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,4 +28,4 @@ app.include_router(AuthenticationRouter)
 
 @app.get("/")
 def home():
-    return "Started...."
+    return {"status": "started", "message": "DBMS Final Project API is running"}
