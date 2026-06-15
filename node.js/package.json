@@ -1,0 +1,15 @@
+{
+  "name": "dbms-project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "npm --prefix \"DBMS PROJECT2/DBMS PROJECT1\" run preview",
+    "dev": "npm --prefix \"DBMS PROJECT2/DBMS PROJECT1\" run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
